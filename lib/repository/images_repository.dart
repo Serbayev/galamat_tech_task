@@ -11,7 +11,7 @@ class ImagesRepository {
     final List<FetchedImagesModel> fetchedImages = [
       for (var i in images)
         FetchedImagesModel(
-          url: i["urls"]["full"],
+          url: i["urls"]["regular"],
           id: i["id"],
         ),
     ];

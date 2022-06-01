@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galamat_tech_task/bloc/images_cubit.dart';
 import 'package:galamat_tech_task/repository/images_repository.dart';
-import 'package:galamat_tech_task/widgets/default_layour.dart';
+import 'package:galamat_tech_task/widgets/default_layout.dart';
 import 'package:galamat_tech_task/widgets/images_grid.dart';
 
 class MainPage extends StatelessWidget {

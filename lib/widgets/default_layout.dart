@@ -14,10 +14,14 @@ class DefaultLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: Text(
+          title,
+          style: TextStyle(color: Colors.black),
+        ),
         backgroundColor: Colors.white,
       ),
-      body: child,
+      body: SafeArea(child: child),
     );
   }
 }

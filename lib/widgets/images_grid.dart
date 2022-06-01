@@ -40,21 +40,23 @@ class _ImagesGridState extends State<ImagesGrid> {
           );
         }
         List<FetchedImagesModel> images = [];
+        if (state is ImagesLoadingState) {
+          images = state.loadedImages;
+        }
         if (state is ImagesLoadedState) {
           images = state.images;
-          return MasonryGridView.count(
-              controller: scrollController,
-              padding: const EdgeInsets.all(10),
-              crossAxisCount: 3,
-              itemCount: images.length,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              itemBuilder: (context, i) => ImageElement(
-                    image: images[i].url,
-                    id: images[i].id,
-                  ));
         }
-        return const Text('Invalid state');
+        return MasonryGridView.count(
+            controller: scrollController,
+            padding: const EdgeInsets.all(10),
+            crossAxisCount: 3,
+            itemCount: images.length,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            itemBuilder: (context, i) => ImageElement(
+                  image: images[i].url,
+                  id: images[i].id,
+                ));
       },
     );
   }

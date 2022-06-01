@@ -8,7 +8,7 @@ class ImagesService {
 
   Future<List<dynamic>> fetchImages(int page) async {
     try {
-      final response = await get(Uri.parse("$baseUrl&?per_page=30&page=$page"));
+      final response = await get(Uri.parse("$baseUrl&per_page=29&page=$page"));
       return jsonDecode(response.body) as List<dynamic>;
     } catch (error) {
       return [];
